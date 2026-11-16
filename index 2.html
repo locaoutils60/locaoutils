@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Location de matériel à Noyon : bricolage, sono et lumière</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ecebe6;--surface:#f9f8f4;--ink:#1c2226;--muted:#59626a;--line:#c9c7be;--accent:#f2b705;--on-accent:#1c2226;--ok:#1f6b45;--hero:#14181b;--hero-ink:#f5f3ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171b1e;--surface:#21272b;--ink:#efeee9;--muted:#9ea6ac;--line:#38424a;--ok:#6fcf9b}}
+:root[data-theme="dark"]{--bg:#171b1e;--surface:#21272b;--ink:#efeee9;--muted:#9ea6ac;--line:#38424a;--ok:#6fcf9b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.55 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:800;line-height:1;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.hero{background:var(--hero);color:var(--hero-ink);position:relative;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:12px}
+.logo{font:800 1.5rem "Barlow Condensed",sans-serif}
+.logo span{background:var(--accent);color:var(--on-accent);padding:0 8px;margin-right:6px}
+.tel{font-weight:600;color:var(--hero-ink);text-decoration:none;border-bottom:2px solid var(--accent)}
+.hero-main{padding:44px 0 64px;position:relative}
+.hero h1{font-size:clamp(3.6rem,15vw,9.5rem);text-transform:uppercase;line-height:.88;max-width:9ch}
+.hero h1 em{font-style:normal;color:var(--accent);display:block}
+.hero p.lead{max-width:44ch;font-size:1.2rem;color:#c9ccc9;margin:24px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font:700 1.05rem Barlow,sans-serif;padding:14px 26px;border:2px solid var(--accent);text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 rgba(242,183,5,.35)}
+.btn.alt{background:transparent;color:var(--hero-ink);border-color:var(--hero-ink);box-shadow:none}
+.btn:active{transform:translate(2px,2px)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.pills a{color:var(--hero-ink);text-decoration:none;border:1px solid #4a545b;padding:6px 14px;border-radius:99px;font-weight:500}
+.pills a:hover{border-color:var(--accent);color:var(--accent)}
+.hero .big{position:absolute;right:-30px;bottom:-40px;font-size:min(46vw,380px);opacity:.1;line-height:1;pointer-events:none;user-select:none}
+.tape{height:16px;background:repeating-linear-gradient(-45deg,var(--accent) 0 16px,var(--hero) 16px 32px)}
+.strip{background:var(--accent);color:var(--on-accent);padding:12px 0;font-weight:600}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 30px}
+section{padding:60px 0}
+h2{font-size:clamp(2.2rem,6vw,3.4rem);text-transform:uppercase;margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 30px;max-width:56ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.card{background:var(--surface);border:2px solid var(--ink);display:flex;flex-direction:column;overflow:hidden}
+.pic{background:var(--accent);height:110px;display:flex;align-items:center;justify-content:center;font-size:3.6rem;border-bottom:2px solid var(--ink)}
+.body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.hook{font:800 1.9rem/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.name{font-weight:600;color:var(--muted);margin:0}
+.body p{margin:0;font-size:.98rem;color:var(--muted)}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:8px}
+.price b{font:800 2.6rem "Barlow Condensed",sans-serif;color:var(--ink)}
+.price small{color:var(--muted)}
+.card button{font:600 1rem Barlow,sans-serif;padding:12px 14px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer;width:100%}
+.card button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.qty{display:flex;gap:8px}
+.opt{display:flex;gap:10px;align-items:center;margin:0;font-weight:500;cursor:pointer}
+.opt input{width:22px;height:22px;padding:0;accent-color:var(--ink)}
+.send{display:flex;flex-wrap:wrap;gap:10px}
+.card[hidden]{display:none}
+.card[data-k="soiree"] .pic{background:linear-gradient(135deg,#3b1e72,#c2185b)}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.tabs button{font:600 1rem Barlow,sans-serif;padding:10px 18px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn.wa{background:#25d366;border-color:#25d366;color:#06240f}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink);box-shadow:none}
+.card .qty button{width:auto;flex:1;background:transparent;color:var(--ink);padding:8px}
+.card .qty button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.book{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:start}
+.panel{background:var(--surface);border:2px solid var(--ink);padding:24px}
+.aside{background:var(--hero);color:var(--hero-ink);padding:24px}
+.aside h3{font-size:1.8rem;color:var(--accent);margin-bottom:10px}
+.aside p{margin:0 0 12px;color:#c9ccc9}
+.aside a{color:var(--hero-ink);font:800 1.8rem "Barlow Condensed",sans-serif;text-decoration:none;border-bottom:3px solid var(--accent)}
+label{display:block;font-weight:600;margin:14px 0 4px}
+input,textarea{width:100%;font:inherit;padding:11px 12px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#recap{margin:0;padding-left:18px}
+.total{font:800 1.9rem "Barlow Condensed",sans-serif;margin:14px 0 0}
+.msg{min-height:1.4em;color:var(--ok);font-weight:600;margin-top:10px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+.steps b{display:block;font:800 4.5rem/1 "Barlow Condensed",sans-serif;color:var(--accent);-webkit-text-stroke:2px var(--ink)}
+.steps h3{font-size:1.8rem;margin:6px 0}
+.steps p{margin:0;color:var(--muted)}
+footer{background:var(--hero);color:#c9ccc9;padding:32px 0;font-size:.98rem}
+footer a{color:var(--hero-ink)}
+.mob{display:none}
+@media (max-width:760px){.book{grid-template-columns:1fr}.row{grid-template-columns:1fr}
+.mob{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--hero);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));gap:10px}
+.mob a{flex:1;text-align:center;padding:12px;font-weight:700;text-decoration:none;color:var(--hero-ink);border:2px solid var(--hero-ink)}
+.mob a+a{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+body{padding-bottom:72px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap bar">
+    <div class="logo"><span>LOCA</span>Matos</div>
+    <a class="tel" id="telTop" href="tel:+33616069109">06 16 06 91 09</a>
+  </div>
+  <div class="wrap hero-main">
+    <h1>Ne l’achetez pas.<em>Louez-le.</em></h1>
+    <p class="lead" id="lead">Bricolage, nettoyage, jeux de lumière et sono : du matériel prêt à l’emploi à Noyon, pour le chantier du week-end comme pour la soirée.</p>
+    <div class="cta"><a class="btn" href="#catalogue" data-cat="brico">🛠️ Bricolage et nettoyage</a><a class="btn alt" href="#catalogue" data-cat="soiree">🎛️ Sono et lumière</a></div>
+    <div class="pills" id="pills"></div>
+    <div class="big" aria-hidden="true">🛠️</div>
+  </div>
+  <div class="tape"></div>
+</header>
+<div class="strip"><div class="wrap"><span>Matériel entretenu et contrôlé</span><span>Même tarif en semaine et le week-end</span><span>Chèque ou espèces</span><span>Carte d’identité à chaque location</span></div></div>
+
+<main>
+<section id="catalogue"><div class="wrap">
+  <h2>Quel besoin ?</h2>
+  <p class="sub">Chantier, nettoyage ou soirée : choisissez le matériel, ajoutez-le à votre demande, c’est tout.</p>
+  <div class="tabs" id="tabs"><button type="button" data-k="all" aria-pressed="true">Tout</button><button type="button" data-k="brico" aria-pressed="false">Bricolage et nettoyage</button><button type="button" data-k="soiree" aria-pressed="false">Sono, lumière et soirée</button></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="reserver" style="padding-top:0"><div class="wrap">
+  <h2>Ma demande</h2>
+  <p class="sub">Aucun paiement en ligne : je confirme la disponibilité, puis on fixe le retrait.</p>
+  <div class="book">
+    <div class="panel">
+      <ul id="recap"></ul>
+      <div class="total" id="total"></div>
+      <div class="row">
+        <div><label for="d1">Du</label><input type="date" id="d1"></div>
+        <div><label for="d2">Au</label><input type="date" id="d2"></div>
+      </div>
+      <label for="nom">Nom</label><input id="nom" autocomplete="name">
+      <label for="tel">Téléphone</label><input id="tel" type="tel" autocomplete="tel">
+      <label for="note">Précisions (facultatif)</label><textarea id="note" rows="2"></textarea>
+      <p class="send"><button class="btn wa" id="wa" type="button">Envoyer par WhatsApp</button><button class="btn" id="sms" type="button">Envoyer par SMS</button><button class="btn ghost" id="send" type="button">Envoyer par e-mail</button></p>
+      <div class="msg" id="msg" role="status"></div>
+    </div>
+    <div class="aside">
+      <h3>Plus rapide ?</h3>
+      <p>Appelez-moi pour vérifier une disponibilité ou poser une question sur un équipement.</p>
+      <a id="telAside" href="tel:+33616069109">06 16 06 91 09</a>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <div class="steps">
+    <div><b>1</b><h3>On réserve</h3><p>Vous choisissez le matériel et les dates, je confirme sous 24 h.</p></div>
+    <div><b>2</b><h3>On retire</h3><p>En semaine de 18 h à 22 h, le week-end dès 9 h. Carte d’identité obligatoire à chaque location, justificatif de domicile et caution. Paiement en chèque ou en espèces, pas de carte bancaire.</p></div>
+    <div><b>3</b><h3>On rend</h3><p>En semaine de 18 h à 22 h, le week-end jusqu’à 20 h. Caution rendue sur place si tout est en ordre.</p></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <strong style="color:var(--hero-ink)">Romain Szmigielski, Noyon</strong><br>
+  Adresse exacte communiquée lors de la réservation.<br>
+  <a id="mailF" href="mailto:Romain.szmigielski@icloud.com">Romain.szmigielski@icloud.com</a>
+</div></footer>
+<nav class="mob"><a id="telMob" href="tel:+33616069109">Appeler</a><a href="#reserver" id="cartMob">Ma demande</a></nav>
+
+<script>
+const CONTACT={email:"Romain.szmigielski@icloud.com",tel:"06 16 06 91 09"};
+const TOOLS=[
+ {id:"karcher",e:"🚿",h:"Terrasse comme neuve",n:"Nettoyeur haute pression Kärcher",d:"Terrasses, façades, voitures, volets. Livré avec lance et buse rotative.",p:25,c:300},
+ {id:"disqueuse",e:"⚙️",h:"Couper net, sans effort",n:"Disqueuse 125 mm",d:"Coupe et meulage du métal, de la pierre et du carrelage. Disques non fournis.",p:12,c:80},
+ {id:"perfo",e:"🔩",h:"Fixer, monter, suspendre",n:"Perceuse",d:"Perçage du bois, du métal et des murs. Forets non fournis.",p:10,c:50},
+ {id:"shampouineuse",e:"🧼",h:"Moquette et canapé remis à neuf",n:"Shampouineuse (injecteur-extracteur)",d:"Nettoyage en profondeur des moquettes, tapis, canapés et sièges auto. Produit nettoyant non fourni, plein en option.",p:30,c:150,opt:{n:"Plein de produit nettoyant",p:2}},
+ {id:"decolleuse",e:"♨️",h:"Le vieux papier peint, fini",n:"Décolleuse de papier peint",d:"Vapeur continue pour retirer papiers peints et revêtements.",p:18,c:100},
+ {id:"aspi",e:"🧹",h:"Cave, chantier, après-travaux",n:"Aspirateur eau et poussières",d:"Chantiers, caves inondées, nettoyage après travaux.",p:14,c:90},
+ {id:"fumee",e:"🌫️",h:"Une ambiance de boîte de nuit",n:"Machine à fumée",d:"Effet de fumée pour soirées, anniversaires et spectacles. Réservoir rempli offert.",p:15,c:150},
+ {id:"lyres",e:"🪩",h:"La lumière qui danse avec la musique",n:"Lyre Nicols Birdy ELC",d:"Lyre à effets : 11 couleurs, stroboscope, réactive à la musique. Deux lyres se synchronisent entre elles. Idéal pour soirées et fêtes.",p:40,c:300,max:2},
+ {id:"pack",e:"🎉",h:"Votre soirée prête en un seul pack",n:"Pack soirée (2 lyres + machine à fumée)",d:"Les 2 lyres Nicols Birdy ELC et la machine à fumée, réservoir rempli offert. 90 € au lieu de 95 € séparément.",p:90,c:600},
+ {id:"mixage",e:"🎚️",h:"Mixez comme un DJ",n:"Table de mixage DJ Behringer VMX1000USB",d:"Table de mixage DJ professionnelle 7 canaux : 2 entrées micro, compteur de BPM, effets kill, effet XPQ 3D Surround, préamplis phono pour platines vinyles et interface USB pour brancher un ordinateur. Pour animer une soirée, un anniversaire ou un mariage.",p:25,c:200},
+ {id:"packdj",e:"🎧",h:"La soirée complète, clé en main",n:"Pack DJ complet (2 lyres, machine à fumée, table de mixage, 2 enceintes et ampli)",d:"Les 2 lyres Nicols Birdy ELC, la machine à fumée (réservoir rempli offert), la table de mixage Behringer VMX1000USB, 2 enceintes de sono BOOST 10 pouces et l’amplificateur Ibiza AMP-300 (2 x 240 W). Lumière et sono réunies dans un seul pack. 145 € au lieu de 150 € séparément.",p:145,c:1000}
+];
+const SOIREE=["fumee","lyres","pack","mixage","packdj"],cat=t=>SOIREE.includes(t.id)?"soiree":"brico";
+const qty={},opts={},sel=new Set(),$=id=>document.getElementById(id),eur=v=>v.toLocaleString("fr-FR")+" €";
+const tl="tel:"+CONTACT.tel.replace(/\s/g,"");
+["telTop","telAside","telMob"].forEach(i=>$(i).href=tl);
+$("telTop").textContent=$("telAside").textContent=CONTACT.tel;
+$("mailF").textContent=CONTACT.email;$("mailF").href="mailto:"+CONTACT.email;
+$("lead").textContent+=" Dès "+eur(Math.min(...TOOLS.map(t=>t.p)))+" par jour.";
+$("pills").innerHTML=TOOLS.map(t=>`<a href="#catalogue">${t.e} ${t.n.split(" (")[0].replace("Nettoyeur haute pression ","")}</a>`).join("");
+$("grid").innerHTML=TOOLS.map(t=>`<article class="card" data-k="${cat(t)}"><div class="pic" aria-hidden="true">${t.e}</div><div class="body">
+<div class="hook">${t.h}</div><p class="name">${t.n}</p><p>${t.d}</p>
+<div class="price"><b>${eur(t.p)}</b><small>/ jour, caution ${eur(t.c)}</small></div>${t.max?`<div class="qty" role="group" aria-label="Nombre de lyres"><button type="button" data-q="${t.id}:1" aria-pressed="true">1 lyre</button><button type="button" data-q="${t.id}:2" aria-pressed="false">2 lyres</button></div>`:""}${t.opt?`<label class="opt"><input type="checkbox" data-o="${t.id}"> ${t.opt.n} (+${eur(t.opt.p)})</label>`:""}
+<button type="button" data-id="${t.id}" aria-pressed="false">Ajouter à ma demande</button></div></article>`).join("");
+$("grid").addEventListener("change",e=>{const o=e.target.dataset.o;if(o){opts[o]=e.target.checked;recap();}});
+$("grid").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.q){const[i,n]=b.dataset.q.split(":");qty[i]=+n;const t=TOOLS.find(x=>x.id===i),c=b.closest(".card");c.querySelector(".price b").textContent=eur(t.p*qty[i]);c.querySelector(".price small").textContent="/ jour, caution "+eur(t.c*qty[i]);b.parentNode.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));recap();return;}
+ const id=b.dataset.id,on=!sel.has(id);on?sel.add(id):sel.delete(id);
+ b.setAttribute("aria-pressed",on);b.textContent=on?"Ajouté ✓ (retirer)":"Ajouter à ma demande";recap();});
+function days(){const a=$("d1").value,b=$("d2").value;if(!a||!b)return 1;
+ return Math.max(1,Math.round((new Date(b)-new Date(a))/864e5)+1);}
+const q=t=>qty[t.id]||1;
+function recap(){const n=days(),list=TOOLS.filter(t=>sel.has(t.id));
+ $("recap").innerHTML=list.length?list.map(t=>`<li>${q(t)>1?q(t)+" × ":""}${t.n} – ${eur(t.p*q(t))} × ${n} j</li>${opts[t.id]&&t.opt?`<li>${t.opt.n} – ${eur(t.opt.p)}</li>`:""}`).join(""):"<li>Aucun matériel choisi pour l’instant.</li>";
+ const tot=list.reduce((s,t)=>s+t.p*q(t)*n+(opts[t.id]&&t.opt?t.opt.p:0),0),cau=list.reduce((s,t)=>s+t.c*q(t),0);
+ $("total").textContent=list.length?`Estimation : ${eur(tot)} + caution ${eur(cau)}`:"";
+ $("cartMob").textContent=list.length?`Ma demande (${list.length})`:"Ma demande";}
+function show(k){document.querySelectorAll(".card").forEach(c=>c.hidden=k!=="all"&&c.dataset.k!==k);document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));}
+$("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)show(b.dataset.k);});
+document.querySelectorAll("[data-cat]").forEach(a=>a.addEventListener("click",()=>show(a.dataset.cat)));
+["d1","d2"].forEach(i=>$(i).addEventListener("change",recap));recap();
+function go(kind){
+ const list=TOOLS.filter(t=>sel.has(t.id));
+ if(!list.length){$("msg").textContent="Choisissez au moins un équipement ci-dessus.";return;}
+ if(!$("nom").value||!$("tel").value||!$("d1").value||!$("d2").value){$("msg").textContent="Renseignez vos dates, votre nom et votre téléphone.";return;}
+ const body=`Bonjour,\n\nJe souhaite louer du ${$("d1").value} au ${$("d2").value} :\n`+list.map(t=>"- "+(q(t)>1?q(t)+" × ":"")+t.n+(opts[t.id]&&t.opt?" + "+t.opt.n.toLowerCase():"")).join("\n")+`\n\nNom : ${$("nom").value}\nTéléphone : ${$("tel").value}\n${$("note").value}`;
+ const num=CONTACT.tel.replace(/\s/g,"").replace(/^0/,"33");
+ if(kind==="wa")location.href=`https://wa.me/${num}?text=${encodeURIComponent(body)}`;
+ else if(kind==="sms")location.href=`sms:+${num}?&body=${encodeURIComponent(body)}`;
+ else location.href=`mailto:${CONTACT.email}?subject=${encodeURIComponent("Demande de location")}&body=${encodeURIComponent(body)}`;
+ $("msg").textContent=kind==="wa"?"WhatsApp s’ouvre : envoyez le message pour finaliser la demande.":kind==="sms"?"Vos messages s’ouvrent : envoyez le SMS pour finaliser la demande.":"Votre application mail s’ouvre : envoyez le message pour finaliser la demande.";}
+$("wa").onclick=()=>go("wa");$("sms").onclick=()=>go("sms");$("send").onclick=()=>go("mail");
+</script>
+</body>
+</html>
